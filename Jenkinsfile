@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'master', url: 'https://github.com/trongpham99-cpu/golang-jenkins.git'
+                git branch: 'main', url: 'https://github.com/ZevCorwin/server_golang.git'
             }
         }
 
@@ -45,7 +45,7 @@ pipeline {
                 sh 'docker network create dev || echo "this network exists"'
                 sh 'echo y | docker container prune '
 
-                sh 'docker container run -d --rm --name server-golang -p 4000:3000 --network dev trongpham99/golang-jenkins:latest'
+                sh 'docker container run -d --rm --name server-golang -p 4000:3000 --network dev tangkhanhdang/server_golangg:latest'
             }
         }
     }
