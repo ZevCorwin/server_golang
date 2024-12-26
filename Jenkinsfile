@@ -45,7 +45,7 @@ pipeline {
                 sh 'docker network create dev || echo "this network exists"'
                 sh 'echo y | docker container prune '
 
-                sh 'docker container run -d --rm --name server-golang -p 4000:3000 --network dev tangkhanhdang/server_golangg:latest'
+                sh 'docker container run -d --rm --name server-golang -p 4000:3000 --network dev tangkhanhdang/server_golang:latest'
             }
         }
     }
